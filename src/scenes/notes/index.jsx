@@ -3,13 +3,13 @@ import { Box, Typography, List, ListItem, ListItemText, useMediaQuery, TextField
 import React, { useState } from "react";
 import { tokens } from "../../theme";
 import { Search as SearchIcon } from "@mui/icons-material";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Notes = () => {
   // Responsive breakpoints
   const isDesktop = useMediaQuery("(min-width: 1024px)"); // Desktop (5 columns)
   const isTablet = useMediaQuery("(min-width: 768px)"); // Tablet (3 columns)
-    //  const navigate = useNavigate();
+     const navigate = useNavigate();
     const isMobile = useMediaQuery("(max-width: 600px)");
       const colors = tokens("light");
       const [openModal, setOpenModal] = useState(false);
@@ -55,46 +55,7 @@ const Notes = () => {
 
 
 {isMobile ? (
-  <Box display="flex"  justifyContent="space-between"  p={3} gap={2}>
-    <TextField
-      variant="outlined"
-      placeholder="Search..."
-      size="small"
-      sx={{
-        background: "#ffffff",
-        flexGrow: 1, // Makes input responsive
-        minWidth: "100px", // Minimum width for small screens
-        maxWidth: "600px", // Maximum width for large screens
-        padding: "5px 20px",
-        borderRadius: "8px",
-        "& fieldset": { border: "none" }, // Removes the border
-      }}
-      value={searchTerm}
-      onChange={handleSearchChange}
-      InputProps={{
-        startAdornment: <SearchIcon sx={{ color: "action.active", mr: 1 }} />,
-      }}
-    />
-<Button
-      variant="contained"
-      sx={{
-        background: colors.blueAccent[500],
-        color: "#ffffff",
-        width: 127.69, // Fixed button width
-        height: 40, // Fixed button height
-        borderRadius: "4px",
-        fontSize: "14px",
-        padding: "12px 18px ",
-        fontWeight: "bold",
-        textTransform: "none",
-      }}
-      onClick={handleOpenModal}
-    >
-      Create New
-    </Button>
-  </Box>
-) : (
-  <Box display="flex" justifyContent="center" alignItems="center" p={3} gap={2}>
+  <Box display="flex" justifyContent="space-between"  p={3} gap={2}>
     <TextField
       variant="outlined"
       placeholder="Search..."
@@ -118,14 +79,51 @@ const Notes = () => {
       variant="contained"
       sx={{
         background: colors.blueAccent[500],
-        fontWeight: "bold",
         color: "#ffffff",
-        whiteSpace: "nowrap",
-        // paddingX: "15px"
-        padding: "12px 18px ",
+        width: "100%", // Fixed button width
+        height: "55px", // Fixed button height
+        borderRadius: "8px",
+        fontSize: "16px",
+        fontWeight: "bold",
+        textTransform: "none",
+      }}
+      onClick={() => navigate('/cmform')}
+    >
+      Create New
+    </Button>
+  </Box>
+) : (
+  <Box display="flex" justifyContent="center" alignItems="center" p={3} gap={2}>
+    <TextField
+      variant="outlined"
+      placeholder="Search..."
+      size="small"
+      sx={{
+        background: "#ffffff",
+        flexGrow: 1, // Makes input responsive
+        minWidth: "100px", // Minimum width for small screens
+        maxWidth: "600px", // Maximum width for large screens
+        padding: "5px 20px",
+        borderRadius: "8px",
+        "& fieldset": { border: "none" }, // Removes the border
+      }}
+      value={searchTerm}
+      onChange={handleSearchChange}
+      InputProps={{
+        startAdornment: <SearchIcon sx={{ color: "action.active", mr: 1 }} />,
+      }}
+    />
+    <Button
+      variant="contained"
+      sx={{
+        background: colors.blueAccent[500],
+        color: "#ffffff",
+        width: 127.69, // Fixed button width
+        height: 40, // Fixed button height
+        borderRadius: "4px",
         fontSize: "14px",
-        textTransform:"none"
-
+        fontWeight: "bold",
+        textTransform: "none",
       }}
       onClick={handleOpenModal}
     >
