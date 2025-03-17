@@ -1,5 +1,5 @@
 
-import { Box, Typography, List, ListItem, ListItemText, useMediaQuery, TextField, Button, Modal } from "@mui/material";
+import { Box, Typography, List, ListItem, ListItemText, useMediaQuery, TextField, Button,   Modal } from "@mui/material";
 import React, { useState } from "react";
 import { tokens } from "../../theme";
 import { Search as SearchIcon } from "@mui/icons-material";
@@ -9,31 +9,31 @@ const Notes = () => {
   // Responsive breakpoints
   const isDesktop = useMediaQuery("(min-width: 1024px)"); // Desktop (5 columns)
   const isTablet = useMediaQuery("(min-width: 768px)"); // Tablet (3 columns)
-  const navigate = useNavigate();
-  const isMobile = useMediaQuery("(max-width: 600px)");
-  const colors = tokens("light");
-  const [openModal, setOpenModal] = useState(false);
-  const [name, setName] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
+     const navigate = useNavigate();
+    const isMobile = useMediaQuery("(max-width: 600px)");
+      const colors = tokens("light");
+      const [openModal, setOpenModal] = useState(false);
+      const [name, setName] = useState("");
+    const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+    const handleSearchChange = (event) => {
+        setSearchTerm(event.target.value);
+      };
 
-  const handleOpenModal = () => {
-    setOpenModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setOpenModal(false);
-    setName(""); // Reset input field
-  };
-
-  const handleSubmit = () => {
-    console.log("Submitted Name:", name);
-    handleCloseModal();
-  };
-
+      const handleOpenModal = () => {
+        setOpenModal(true);
+      };
+    
+      const handleCloseModal = () => {
+        setOpenModal(false);
+        setName(""); // Reset input field
+      };
+    
+      const handleSubmit = () => {
+        console.log("Submitted Name:", name);
+        handleCloseModal();
+      };
+    
   // Dynamic columns based on screen size
   const columns = isDesktop ? 5 : isTablet ? 3 : 1;
 
@@ -54,83 +54,84 @@ const Notes = () => {
     <Box sx={{ padding: 3 }}>
 
 
-      {isMobile ? (
-        <Box display="flex"  justifyContent="space-between" p={3} gap={2}>
-          <TextField
-            variant="outlined"
-            placeholder="Search..."
-            size="small"
-            sx={{
-              background: "#ffffff",
-              flexGrow: 1, // Makes input responsive
-              minWidth: "50px", // Minimum width for small screens
-              maxWidth: "600px", // Maximum width for large screens
-              padding: "5px 20px",
-              borderRadius: "8px",
-              "& fieldset": { border: "none" }, // Removes the border
-            }}
-            value={searchTerm}
-            onChange={handleSearchChange}
-            InputProps={{
-              startAdornment: <SearchIcon sx={{ color: "action.active", mr: 1 }} />,
-            }}
-          />
-          <Button
-            variant="contained"
-            sx={{
-              background: colors.blueAccent[500],
-              color: "#ffffff",
-              width: "100%", // Fixed button width
-              height: "55px", // Fixed button height
-              borderRadius: "8px",
-              fontSize: "16px",
-              fontWeight: "bold",
-              textTransform: "none",
-            }}
-            onClick={() => navigate('/cmform')}
-          >
-            Create New
-          </Button>
-        </Box>
-      ) : (
-        <Box display="flex" justifyContent="center" alignItems="center" p={3} gap={2}>
-          <TextField
-            variant="outlined"
-            placeholder="Search..."
-            size="small"
-            sx={{
-              background: "#ffffff",
-              flexGrow: 1, // Makes input responsive
-              minWidth: "100px", // Minimum width for small screens
-              maxWidth: "600px", // Maximum width for large screens
-              padding: "5px 20px",
-              borderRadius: "8px",
-              "& fieldset": { border: "none" }, // Removes the border
-            }}
-            value={searchTerm}
-            onChange={handleSearchChange}
-            InputProps={{
-              startAdornment: <SearchIcon sx={{ color: "action.active", mr: 1 }} />,
-            }}
-          />
-          <Button
-            variant="contained"
-            sx={{
-              background: colors.blueAccent[500],
-              color: "#ffffff",
-              width: 127.69, // Fixed button width
-              height: 40, // Fixed button height
-              borderRadius: "4px",
-              fontSize: "14px",
-              fontWeight: "bold",
-              textTransform: "none",
-            }}
-            onClick={handleOpenModal}
-          >
-            Create New
-          </Button>
-        </Box>
-      )}
+{isMobile ? (
+  <Box display="flex"  justifyContent="space-between"  p={3} gap={2}>
+    <TextField
+      variant="outlined"
+      placeholder="Search..."
+      size="small"
+      sx={{
+        background: "#ffffff",
+        flexGrow: 1, // Makes input responsive
+        minWidth: "100px", // Minimum width for small screens
+        maxWidth: "600px", // Maximum width for large screens
+        padding: "5px 20px",
+        borderRadius: "8px",
+        "& fieldset": { border: "none" }, // Removes the border
+      }}
+      value={searchTerm}
+      onChange={handleSearchChange}
+      InputProps={{
+        startAdornment: <SearchIcon sx={{ color: "action.active", mr: 1 }} />,
+      }}
+    />
+<Button
+      variant="contained"
+      sx={{
+        background: colors.blueAccent[500],
+        color: "#ffffff",
+        width: 127.69, // Fixed button width
+        height: 40, // Fixed button height
+        borderRadius: "4px",
+        fontSize: "14px",
+        fontWeight: "bold",
+        textTransform: "none",
+      }}
+      onClick={handleOpenModal}
+    >
+      Create New
+    </Button>
+  </Box>
+) : (
+  <Box display="flex" justifyContent="center" alignItems="center" p={3} gap={2}>
+    <TextField
+      variant="outlined"
+      placeholder="Search..."
+      size="small"
+      sx={{
+        background: "#ffffff",
+        flexGrow: 1, // Makes input responsive
+        minWidth: "50px", // Minimum width for small screens
+        maxWidth: "600px", // Maximum width for large screens
+        padding: "5px 20px",
+        borderRadius: "8px",
+        "& fieldset": { border: "none" }, // Removes the border
+      }}
+      value={searchTerm}
+      onChange={handleSearchChange}
+      InputProps={{
+        startAdornment: <SearchIcon sx={{ color: "action.active", mr: 1 }} />,
+      }}
+    />
+    <Button
+      variant="contained"
+      sx={{
+        background: colors.blueAccent[500],
+        fontWeight: "bold",
+        color: "#ffffff",
+        whiteSpace: "nowrap",
+        // paddingX: "15px"
+        padding: "12px 18px ",
+        fontSize: "14px",
+        textTransform:"none"
+
+      }}
+      onClick={handleOpenModal}
+    >
+      Create New
+    </Button>
+  </Box>
+)}
       <Box
         sx={{
           display: "grid",
@@ -139,14 +140,14 @@ const Notes = () => {
         }}
       >
         {sections.map((section, index) => (
-          <Box key={index} sx={{ padding: 2, backgroundColor: "#f9f9f9", borderRadius: 2, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+          <Box key={index} sx={{ padding: 2, backgroundColor: "#f9f9f9", borderRadius: 2, display:"flex", flexDirection:"column", justifyContent:"space-between" }}>
             <Box >
-              <Typography sx={{ fontWeight: "bold", marginBottom: 1, fontSize: "16px" }}>
-                {section.title}
-              </Typography>
-              <Typography sx={{ marginBottom: 2, fontWeight: "14px" }}>
-                {section.text}
-              </Typography>
+           <Typography  sx={{ fontWeight: "bold", marginBottom: 1, fontSize:"16px" }}>
+              {section.title}
+            </Typography>
+            <Typography  sx={{  marginBottom: 2, fontWeight:"14px" }}>
+            {section.text}
+            </Typography>
             </Box>
             {section.isDate ? (
               <List>
@@ -158,7 +159,7 @@ const Notes = () => {
               </List>
             ) : (
               <Typography variant="body1" sx={{ color: "text.secondary" }}>
-                15th March, 2025", "15th March, 2025
+                 15th March, 2025", "15th March, 2025
               </Typography>
             )}
           </Box>
@@ -185,68 +186,16 @@ const Notes = () => {
           <TextField
             fullWidth
             variant="outlined"
-            // label="Name"
+            label="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            sx={{
-              "& .MuiOutlinedInput-root": {
-                borderRadius: "8px",
-                border: "1px solid #ccc",
-                backgroundColor: "#ffffff",
-                boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.1)",
-                "&:hover": {
-                  borderColor: "#999",
-                  boxShadow: "4px 4px 8px rgba(0, 0, 0, 0.15)",
-                },
-              },
-              // "& .MuiInputLabel-root": {
-              //   color: "#555",
-              // },
-              "& .MuiOutlinedInput-notchedOutline": {
-                border: "none",
-              },
-            }}
+            sx={{ mb: 3 }}
           />
-          <Box display="flex" flexDirection="column" gap="8px" paddingY={2}>
-            <Typography variant="body1" fontWeight="bold" fontSize="15px">
-              Details of your experience
-            </Typography>
-            <TextField
-              fullWidth
-              variant="outlined"
-              multiline
-              rows={4}
-              name="experienceDetails"
-              // value={values.experienceDetails}
-              // onChange={handleChange}
-              // onBlur={handleBlur}
-              // error={!!touched.experienceDetails && !!errors.experienceDetails}
-              // helperText={touched.experienceDetails && errors.experienceDetails}
-              sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "8px",
-                  border: "1px solid #ccc",
-                  backgroundColor: "#ffffff",
-                  boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.1)",
-                  "&:hover": {
-                    borderColor: "#999",
-                    boxShadow: "4px 4px 8px rgba(0, 0, 0, 0.15)",
-                  },
-                },
-                "& .MuiInputLabel-root": {
-                  color: "#555",
-                },
-                "& .MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-              }}
-            />
-          </Box>
           <Box display="flex" justifyContent="flex-start" gap={3}>
-            <Button variant="contained" onClick={handleSubmit} sx={{ backgroundColor: colors.blueAccent[700], color: "#ffffff", fontSize: "14px", padding: "8px 32px" }} >
+            <Button variant="contained" onClick={handleSubmit} sx={{backgroundColor:colors.blueAccent[700], color:"#ffffff", fontSize:"14px", padding:"8px 32px"}} >
               Submit
             </Button>
-            <Button onClick={handleCloseModal} sx={{ fontSize: "14px", padding: "8px 32px", backgroundColor: "#475569", color: "#ffffff" }}>
+            <Button  onClick={handleCloseModal} sx={{fontSize:"14px", padding:"8px 32px", backgroundColor:"#475569", color:"#ffffff"}}>
               Cancel
             </Button>
           </Box>
