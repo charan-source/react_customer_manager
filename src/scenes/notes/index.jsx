@@ -92,7 +92,7 @@ const Notes = () => {
       value={searchTerm}
       onChange={handleSearchChange}
       InputProps={{
-        startAdornment: <SearchIcon sx={{ color: "action.active", mr: 1 }} />,
+        startAdornment: <SearchIcon sx={{ color: "action.active" }} />,
       }}
     />
     <Button
