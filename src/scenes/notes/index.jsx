@@ -84,6 +84,7 @@ const Notes = () => {
         height: 40, // Fixed button height
         borderRadius: "4px",
         fontSize: "14px",
+        padding: "12px 18px ",
         fontWeight: "bold",
         textTransform: "none",
       }}
