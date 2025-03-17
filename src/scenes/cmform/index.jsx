@@ -223,7 +223,7 @@ const CmForm = () => {
     position: "relative",
     // border: "2px solid gray",
     cursor: "pointer",
-    backgroundColor: "#f9f9f9",
+    // backgroundColor: "#f9f9f9",
     marginY:"15px"
   }}
   onClick={() => document.getElementById("fileInput").click()} // Trigger file input on click

@@ -141,7 +141,7 @@ const Topbar = () => {
       case "/allExperiences":
         return { primaryTitle: "Experiences", secondaryTitle: "All Experiences" };
       case "/newExperiences":
-        return { primaryTitle: "New Experinces", secondaryTitle: "New Experiences" };
+        return { primaryTitle: "Experiences", secondaryTitle: "New Experiences" };
       case "/pendingExperiences":
         return { primaryTitle: "Experiences", secondaryTitle: "Pending Experiences" };
       case "/resolvedExperiences":
