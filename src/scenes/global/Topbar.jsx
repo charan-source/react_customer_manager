@@ -179,12 +179,8 @@ const Topbar = () => {
 
   const logoSrc = logoLight;
 
-  const getGreeting = () => {
-    const hour = new Date().getHours();
-    if (hour < 12) return "Good Morning";
-    if (hour < 18) return "Good Afternoon";
-    return "Good Evening";
-  };
+
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(new Date());
@@ -274,9 +270,9 @@ const Topbar = () => {
                 textAlign: isMobile ? "center" : "left",
               }}
             >
-              <Typography sx={{ color: "#8d8d8d", fontSize: isMobile ? "30px" : "25px" }}>
+              {/* <Typography sx={{ color: "#8d8d8d", fontSize: isMobile ? "30px" : "25px" }}>
                 {getGreeting()} Charan
-              </Typography>
+              </Typography> */}
               <Typography sx={{ color: "#8d8d8d", fontSize: isMobile ? "16px" : "16px" }}>
                 {currentTime.toLocaleString("en-US", {
                   month: "long", day: "numeric", year: "numeric", hour: "numeric", minute: "numeric", hour12: true
@@ -340,9 +336,9 @@ const Topbar = () => {
                 textAlign: isMobile ? "center" : "left",
               }}
             >
-              <Typography sx={{ color: "#8d8d8d", fontSize: isMobile ? "20px" : "25px" }}>
+              {/* <Typography sx={{ color: "#8d8d8d", fontSize: isMobile ? "20px" : "25px" }}>
                 {getGreeting()} Charan
-              </Typography>
+              </Typography> */}
               <Typography sx={{ color: "#8d8d8d", fontSize: isMobile ? "14px" : "16px" }}>
                 {currentTime.toLocaleString("en-US", {
                   month: "long", day: "numeric", year: "numeric", hour: "numeric", minute: "numeric", hour12: true
