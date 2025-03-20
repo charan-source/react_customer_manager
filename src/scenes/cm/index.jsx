@@ -55,7 +55,7 @@ const Cm = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const isMobile = useMediaQuery("(max-width: 600px)");
-    const Navigate = useNavigate();
+  const Navigate = useNavigate();
 
   // State for tickets
   const [tickets] = useState(initialTickets); // Removed setTickets since it's unused
@@ -124,32 +124,32 @@ const Cm = () => {
         </Box>
 
         {/* Export Button */}
-        <Button 
-         sx={{
-          backgroundColor: colors.blueAccent[500],
-          color: "#ffffff",
-          whiteSpace: "nowrap",
-          fontWeight: "bold",
-            textTransform:"none"
-        }}
-          variant="contained" 
-          startIcon={<ImportExportIcon />} 
+        <Button
+          sx={{
+            backgroundColor: colors.blueAccent[500],
+            color: "#ffffff",
+            whiteSpace: "nowrap",
+            fontWeight: "bold",
+            textTransform: "none"
+          }}
+          variant="contained"
+          startIcon={<ImportExportIcon />}
           onClick={() => alert("Export Data!")}
         >
           Export
         </Button>
 
         {/* Filter Button */}
-        <Button           
-                  sx={{
-                    backgroundColor: colors.blueAccent[500],
-                    color: "#ffffff",
-                    whiteSpace: "nowrap",
-                    fontWeight: "bold",
-                      textTransform:"none"
-                  }}
-          variant="contained" 
-          startIcon={<FilterIcon />} 
+        <Button
+          sx={{
+            backgroundColor: colors.blueAccent[500],
+            color: "#ffffff",
+            whiteSpace: "nowrap",
+            fontWeight: "bold",
+            textTransform: "none"
+          }}
+          variant="contained"
+          startIcon={<FilterIcon />}
           onClick={handleFilterClick}
         >
           Filter
@@ -182,23 +182,23 @@ const Cm = () => {
             ))}
           </Box>
         </Menu>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      background: colors.blueAccent[500],
-                      fontWeight: "bold",
-                      color: "#ffffff",
-                      whiteSpace: "nowrap",
-                      // paddingX: "15px"
-                      // padding: "12px 18px ",
-                      // fontSize: "14px",
-                      textTransform:"none"
-                    }}
-                    startIcon={<AddIcon />}
-                    onClick={handleNewTicket}
-                  >
-                    New Experience
-                  </Button>
+        <Button
+          variant="contained"
+          sx={{
+            background: colors.blueAccent[500],
+            fontWeight: "bold",
+            color: "#ffffff",
+            whiteSpace: "nowrap",
+            // paddingX: "15px"
+            // padding: "12px 18px ",
+            // fontSize: "14px",
+            textTransform: "none"
+          }}
+          startIcon={<AddIcon />}
+          onClick={handleNewTicket}
+        >
+          New Experience
+        </Button>
       </Box>
 
       {/* DataGrid */}
@@ -235,7 +235,7 @@ const Cm = () => {
           "& .MuiDataGrid-virtualScroller": {
             backgroundColor: "#ffffff",
           },
-          
+
           "& .MuiDataGrid-root::-webkit-scrollbar": {
             display: "none !important",
           },
@@ -267,11 +267,70 @@ const Cm = () => {
           },
         }}>
         <DataGrid
-                sx={{
-                  "& .MuiDataGrid-columnSeparator": {
-                   display: "none !important", // Ensures it overrides MUI defaults
-                  },
-                }}
+          sx={{
+            "& .MuiDataGrid-cell": {
+              borderBottom: "none",
+              fontSize: "16px",
+              whiteSpace: "nowrap", // Prevent text wrapping
+              overflow: "visible", // Prevent text truncation
+            },
+            "& .MuiDataGrid-columnHeaders": {
+              backgroundColor: colors.blueAccent[700],
+              borderBottom: "none", // Remove the border below the header
+              fontWeight: "bold !important",
+              fontSize: "16px !important",
+              color: "#ffffff",
+            },
+            // "& .MuiDataGrid-root::-webkit-scrollbar-thumb":{
+            //    width: "2px !important",
+            //    height: "6px !important"
+            //  },
+            "& .MuiDataGrid-columnSeparator": {
+              display: "none", // Hide the column separator
+            },
+            // "& .MuiDataGrid-root::-webkit-scrollbar": {
+            //   display: "none", // Hides scrollbar in Chrome, Safari
+            // },
+            "& .MuiDataGrid-columnHeaderTitle": {
+              fontWeight: "bold !important", // Ensure header text is bold
+            },
+            // "& .MuiDataGrid-virtualScroller": {
+            //   backgroundColor: "#ffffff",
+            // },
+            "& .MuiDataGrid-root::-webkit-scrollbar": {
+              display: "none !important",
+            },
+            "& .MuiDataGrid-virtualScroller::-webkit-scrollbar": {
+              display: "none !important",
+            },
+            "& .MuiDataGrid-root": {
+              // scrollbarWidth: "none !important", // Hides scrollbar in Firefox
+            },
+            "& .MuiDataGrid-virtualScroller": {
+              // scrollbarWidth: "none !important",
+              backgroundColor: "#ffffff",
+            },
+            "& .MuiDataGrid-row": {
+              borderBottom: `0.5px solid ${colors.grey[300]}`, // Add border to the bottom of each row
+            },
+            "& .MuiTablePagination-root": {
+              color: "#ffffff !important", // Ensure pagination text is white
+            },
+            "& .MuiTablePagination-selectLabel, & .MuiTablePagination-input": {
+              color: "#ffffff !important", // Ensure select label and input text are white
+            },
+            "& .MuiTablePagination-displayedRows": {
+              color: "#ffffff !important", // Ensure displayed rows text is white
+            },
+            "& .MuiSvgIcon-root": {
+              color: "#ffffff !important", // Ensure pagination icons are white
+            },
+            "& .MuiDataGrid-footerContainer": {
+              borderTop: "none",
+              backgroundColor: colors.blueAccent[700],
+              color: "#ffffff",
+            },
+          }}
           rows={filteredTickets}
           columns={columns}
           pageSize={10}
