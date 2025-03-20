@@ -48,7 +48,7 @@ const CmForm = () => {
   const scalingFactor = 1.1;
 
   return (
-    <Box m="20px" sx={{ backgroundColor: "#ffffff", padding: "20px" }}>
+    <Box  sx={{ backgroundColor: "#ffffff", padding: "20px" }}>
       {/* <Header title="Share your experience" /> */}
 
       <Formik onSubmit={handleFormSubmit} initialValues={initialValues} validationSchema={checkoutSchema}>
@@ -119,6 +119,7 @@ const CmForm = () => {
                   helperText={touched.subject && errors.subject}
                   sx={{
                     "& .MuiOutlinedInput-root": {
+                      height: "45px", 
                       // borderRadius: "8px",
                       border: "1px solid #ccc",
                       backgroundColor: "#ffffff",
@@ -134,6 +135,8 @@ const CmForm = () => {
                     "& .MuiOutlinedInput-notchedOutline": {
                       border: "none",
                     },
+                  //  height:"30px"
+                  
                   }}
                 />
               </Box>
@@ -171,13 +174,16 @@ const CmForm = () => {
                     "& .MuiOutlinedInput-notchedOutline": {
                       border: "none",
                     },
+                      //  height:"30px"
+                    
                   }}
                 />
               </Box>
 
               {/* Impact Selection */}
               {/* Impact Selection */}
-              <Typography variant="h6" fontWeight="bold" fontSize="15px">
+              <Box sx={{display:"flex", flexDirection:"column", justifyContent:"center", gap:"5px"}}>
+              <Typography  fontWeight="bold" fontSize="15px">
                 Impact
               </Typography>
               <FormControl fullWidth>
@@ -187,10 +193,16 @@ const CmForm = () => {
                   displayEmpty
                   variant="outlined"
                   sx={{
+                    height: "45px", 
                     backgroundColor: "#ffffff",
                     // borderRadius: "8px",
                     border: "1px solid #ccc",
                     boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.1)",
+                    padding: "0px", // Remove extra padding
+                    "& .MuiSelect-select": {
+                      padding: "6px 10px", // Reduce inner padding
+                      fontSize: "14px", // Adjust font size
+                    },
                     "&:hover": {
                       borderColor: "#999",
                       boxShadow: "4px 4px 8px rgba(0, 0, 0, 0.15)",
@@ -210,7 +222,7 @@ const CmForm = () => {
                   </Typography>
                 )}
               </FormControl>
-
+              </Box>
 
               {/* File Upload */}
               <Box
@@ -268,7 +280,7 @@ const CmForm = () => {
 
 
               {/* Submit Button */}
-              <Box display="flex" justifyContent="flex-end" mt="5px">
+              <Box display="flex" justifyContent="flex-end" >
                 <Button
                   type="submit"
                   variant="contained"
