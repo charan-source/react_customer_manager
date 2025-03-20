@@ -257,6 +257,11 @@ const PendingExperiences = () => {
           },
         }}>
         <DataGrid
+                sx={{
+                  "& .MuiDataGrid-columnSeparator": {
+                   display: "none !important", // Ensures it overrides MUI defaults
+                  },
+                }}
           rows={filteredTickets}
           columns={columns}
           pageSize={10}

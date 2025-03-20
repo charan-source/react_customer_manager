@@ -55,7 +55,7 @@ const NewExperiences = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const isMobile = useMediaQuery("(max-width: 600px)");
-    const Navigate = useNavigate();
+  const Navigate = useNavigate();
 
   // State for tickets
   const [tickets] = useState(initialTickets); // Removed setTickets since it's unused
@@ -124,32 +124,32 @@ const NewExperiences = () => {
         </Box>
 
         {/* Export Button */}
-        <Button 
-         sx={{
-          backgroundColor: colors.blueAccent[500],
-          color: "#ffffff",
-          whiteSpace: "nowrap",
-          fontWeight: "bold",
-            textTransform:"none"
-        }}
-          variant="contained" 
-          startIcon={<ImportExportIcon />} 
+        <Button
+          sx={{
+            backgroundColor: colors.blueAccent[500],
+            color: "#ffffff",
+            whiteSpace: "nowrap",
+            fontWeight: "bold",
+            textTransform: "none"
+          }}
+          variant="contained"
+          startIcon={<ImportExportIcon />}
           onClick={() => alert("Export Data!")}
         >
           Export
         </Button>
 
         {/* Filter Button */}
-        <Button           
-                  sx={{
-                    backgroundColor: colors.blueAccent[500],
-                    color: "#ffffff",
-                    whiteSpace: "nowrap",
-                    fontWeight: "bold",
-                      textTransform:"none"
-                  }}
-          variant="contained" 
-          startIcon={<FilterIcon />} 
+        <Button
+          sx={{
+            backgroundColor: colors.blueAccent[500],
+            color: "#ffffff",
+            whiteSpace: "nowrap",
+            fontWeight: "bold",
+            textTransform: "none"
+          }}
+          variant="contained"
+          startIcon={<FilterIcon />}
           onClick={handleFilterClick}
         >
           Filter
@@ -182,23 +182,23 @@ const NewExperiences = () => {
             ))}
           </Box>
         </Menu>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      background: colors.blueAccent[500],
-                      fontWeight: "bold",
-                      color: "#ffffff",
-                      whiteSpace: "nowrap",
-                      // paddingX: "15px"
-                      // padding: "12px 18px ",
-                      // fontSize: "14px",
-                      textTransform:"none"
-                    }}
-                    startIcon={<AddIcon />}
-                    onClick={handleNewTicket}
-                  >
-                    New Experience
-                  </Button>
+        <Button
+          variant="contained"
+          sx={{
+            background: colors.blueAccent[500],
+            fontWeight: "bold",
+            color: "#ffffff",
+            whiteSpace: "nowrap",
+            // paddingX: "15px"
+            // padding: "12px 18px ",
+            // fontSize: "14px",
+            textTransform: "none"
+          }}
+          startIcon={<AddIcon />}
+          onClick={handleNewTicket}
+        >
+          New Experience
+        </Button>
       </Box>
 
       {/* DataGrid */}
@@ -257,6 +257,11 @@ const NewExperiences = () => {
           },
         }}>
         <DataGrid
+                sx={{
+                  "& .MuiDataGrid-columnSeparator": {
+                   display: "none !important", // Ensures it overrides MUI defaults
+                  },
+                }}
           rows={filteredTickets}
           columns={columns}
           pageSize={10}

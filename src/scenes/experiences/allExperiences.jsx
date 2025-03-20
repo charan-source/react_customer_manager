@@ -226,6 +226,9 @@ const AllExperiences = () => {
           //    width: "2px !important",
           //    height: "6px !important"
           //  },
+          // "& .MuiDataGrid-columnSeparator": {
+          //   display: "none", // Hide the column separator
+          // },
           "& .MuiDataGrid-columnSeparator": {
             display: "none", // Hide the column separator
           },
@@ -257,6 +260,11 @@ const AllExperiences = () => {
           },
         }}>
         <DataGrid
+                sx={{
+                  "& .MuiDataGrid-columnSeparator": {
+                   display: "none !important", // Ensures it overrides MUI defaults
+                  },
+                }}
           rows={filteredTickets}
           columns={columns}
           pageSize={10}
