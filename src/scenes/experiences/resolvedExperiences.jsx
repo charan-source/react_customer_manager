@@ -205,10 +205,10 @@ const ResolvedExperiences = () => {
       <Box height="70vh"
         m="13px 0 0 0"
         sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-            overflowX: "auto", // Enable horizontal scrolling
-          },
+          // "& .MuiDataGrid-root": {
+          //   border: "none",
+          //   overflowX: "auto", // Enable horizontal scrolling
+          // },
           "& .MuiDataGrid-cell": {
             borderBottom: "none",
             fontSize: "16px",
@@ -234,6 +234,15 @@ const ResolvedExperiences = () => {
           },
           "& .MuiDataGrid-virtualScroller": {
             backgroundColor: "#ffffff",
+          },
+          "& .MuiDataGrid-root::-webkit-scrollbar": {
+            display: "none !important",
+          },
+          "& .MuiDataGrid-virtualScroller::-webkit-scrollbar": {
+            display: "none !important",
+          },
+          "& .MuiDataGrid-root": {
+            // scrollbarWidth: "none", // Hides scrollbar in Firefox
           },
           "& .MuiDataGrid-row": {
             borderBottom: `0.5px solid ${colors.grey[300]}`, // Add border to the bottom of each row
