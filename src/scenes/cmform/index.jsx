@@ -54,7 +54,7 @@ const CmForm = () => {
       <Formik onSubmit={handleFormSubmit} initialValues={initialValues} validationSchema={checkoutSchema}>
         {({ values, errors, touched, handleBlur, handleChange, handleSubmit, setFieldValue }) => (
           <form onSubmit={handleSubmit}>
-            <Box display="flex" flexDirection="column" gap="20px">
+            <Box display="flex" flexDirection="column" gap="10px">
               {/* Experience Selection Heading */}
               <Typography fontWeight="bold" fontSize="15px">
                 How was your experience?
