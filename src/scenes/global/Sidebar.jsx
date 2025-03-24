@@ -30,6 +30,8 @@ const getActivePage = (pathname) => {
     pathname.includes("/cmform") ||
     pathname.includes("/cm") ||
     pathname.includes("/allExperiences") ||
+    pathname.includes("/cmform") ||
+    pathname.includes("/ticketdetails") ||
     pathname.includes("/newExperiences") ||
     pathname.includes("/pendingExperiences") ||
     pathname.includes("/resolvedExperiences")

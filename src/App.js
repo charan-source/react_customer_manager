@@ -25,6 +25,7 @@ import NewExperiences from "./scenes/experiences/newExperiences";
 import PendingExperiences from "./scenes/experiences/pendingExperiences";
 import ResolvedExperiences from "./scenes/experiences/resolvedExperiences";
 import Notes from "./scenes/notes"
+import TicketDetails from "./scenes/ticketsdetails";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -86,7 +87,7 @@ function App() {
             <Route path="/geography" element={<Geography />} />
             <Route path="/notes" element={<Notes />} />
             <Route path="/profile" element={<Profile />} />
-
+            <Route path="/ticketdetails" element={<TicketDetails />} />
             {/* Experience Routes */}
             <Route path="/allExperiences" element={<AllExperiences />} />
             <Route path="/newExperiences" element={<NewExperiences />} />

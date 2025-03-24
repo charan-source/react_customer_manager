@@ -28,6 +28,7 @@ const getActivePage = (pathname) => {
   } else if (
     pathname.includes("/allExperiences") ||
     pathname.includes("/cmform") ||
+    pathname.includes("/ticketdetails") ||
     pathname.includes("/newExperiences") ||
     pathname.includes("/pendingExperiences") ||
     pathname.includes("/resolvedExperiences")
@@ -103,6 +104,8 @@ const Topbar = () => {
         return "Create a New Customer Manager";
       case "/crmform":
         return "Allot New Experience";
+      case "/ticketdetails":
+        return "Experience Details";
       case "/form":
         return "";
       case "/allExperiences":
@@ -133,6 +136,8 @@ const Topbar = () => {
         return { primaryTitle: "Customer Relationship Manager", secondaryTitle: null };
       case "/hob":
         return { primaryTitle: "Head of The Business", secondaryTitle: null };
+      case "/ticketdetails":
+        return { primaryTitle: "Experience Details", secondaryTitle: null };
       case "/cmform":
         return { primaryTitle: "Experiences", secondaryTitle: "Create a New Experience" };
       case "/crmform":
