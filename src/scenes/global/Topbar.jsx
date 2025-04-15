@@ -449,19 +449,19 @@ const Topbar = () => {
                 paddingLeft: isMobile ? "12px" : "20px",
               }}
             >
-              <Typography sx={{ color: "#ffffff", fontSize: isMobile ? "20px" : "25px" }}>
+              <Typography sx={{color: "#ffffff", fontSize: isMobile ? "17px" : "20px", fontWeight: "bold" }}>
                 {primaryTitle}
               </Typography>
               <Box sx={{ color: "#ffffff", alignItems: "center", gap: 1, display: "flex" }}>
                 <HomeOutlinedIcon onClick={() => navigate("/")} fontSize="small" sx={{ cursor: "pointer" }} />
                 <CustomDivider /> 
-                <Typography sx={{ cursor: "pointer" }} onClick={() => navigate(-1)}>
+                <Typography sx={{ cursor: "pointer", fontSize: "14px" }} onClick={() => navigate(-1)}>
                   {primaryTitle}
                 </Typography>
                 {secondaryTitle && (
                   <>
                    <CustomDivider /> 
-                    <Typography sx={{ cursor: "pointer" }} onClick={() => navigate(location.pathname)}>
+                    <Typography sx={{ cursor: "pointer", fontSize: "14px" }} onClick={() => navigate(location.pathname)}>
                       {secondaryTitle}
                     </Typography>
                   </>
