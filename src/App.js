@@ -36,6 +36,7 @@ import PendingExperiences from "./scenes/experiences/pendingExperiences";
 import ResolvedExperiences from "./scenes/experiences/resolvedExperiences";
 import Notes from "./scenes/notes"
 import TicketDetails from "./scenes/ticketsdetails";
+import TaskDetails from "./scenes/taskdetails";
 // import TicketDetails from "./scenes/ticketsdetails";
 // import Organization from "./scenes/organization";
 // import OrganizationDetails from "./scenes/organizationdetails";
@@ -154,7 +155,7 @@ function App() {
             <Route path="/notes" element={<Notes />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/ticketdetails" element={<TicketDetails />} />
-            {/* <Route path="/taskdetails" element={<TaskDetails />} /> */}
+            <Route path="/taskdetails" element={<TaskDetails />} />
             {/* <Route path="/organization" element={<Organization />} /> */}
             {/* <Route path="/organizationdetails" element={<OrganizationDetails />} /> */}
             {/* <Route path="/cmdetails" element={<CmDetails />} /> */}

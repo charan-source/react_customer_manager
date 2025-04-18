@@ -2,7 +2,8 @@ import { Box, IconButton, useTheme, Typography, useMediaQuery, Modal, Backdrop, 
 import { useState, useEffect } from "react";
 import { tokens } from "../../theme";
 import { Link, useLocation } from "react-router-dom";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+import PersonIcon from "@mui/icons-material/Person";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
@@ -28,6 +29,7 @@ const getActivePage = (pathname) => {
   } else if (
     pathname.includes("/allExperiences") ||
     pathname.includes("/cmform") ||
+    pathname.includes("/taskdetails") ||
     pathname.includes("/ticketdetails") ||
     pathname.includes("/newExperiences") ||
     pathname.includes("/pendingExperiences") ||
@@ -106,6 +108,8 @@ const Topbar = () => {
         return "Allot New Experience";
       case "/ticketdetails":
         return "Experience Details";
+      case "/tasks":
+        return "Tasks List";  
       case "/form":
         return "";
       case "/allExperiences":
@@ -138,6 +142,8 @@ const Topbar = () => {
         return { primaryTitle: "Head of The Business", secondaryTitle: null };
       case "/ticketdetails":
         return { primaryTitle: "Experience Details", secondaryTitle: null };
+      case "/taskdetails":
+        return { primaryTitle: "Task Details", secondaryTitle: null };     
       case "/cmform":
         return { primaryTitle: "Experiences", secondaryTitle: "Create a New Experience" };
       case "/crmform":
@@ -260,7 +266,7 @@ const Topbar = () => {
               paddingX: isMobile ? 2 : 9,
               paddingY: 1,
               boxShadow: "0px 4px 4px -2px rgba(0, 0, 0, 0.1)",
-              padding: 4,
+              padding: 1,
             }}
           >
             {/* Greeting Message */}
@@ -276,7 +282,7 @@ const Topbar = () => {
               }}
             >
               {/* <Typography sx={{ color: "#8d8d8d", fontSize: isMobile ? "30px" : "25px" }}>
-                {getGreeting()} Charan
+                {getGreeting()} Delphin
               </Typography> */}
               <Typography sx={{ color: "#8d8d8d", fontSize: isMobile ? "16px" : "16px" }}>
                 {currentTime.toLocaleString("en-US", {
@@ -294,6 +300,26 @@ const Topbar = () => {
                 alignItems: "center",
               }}
             >
+
+<IconButton  sx={{ gap: 1 }}>
+                <Box
+                  sx={{
+                    width: isMobile ? 25 : 30,
+                    height: isMobile ? 25 : 30,
+                    borderRadius: "50%",
+                    backgroundColor: colors.blueAccent[500],
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                 <NotificationsIcon sx={{ fontSize: isMobile ? 18 : 20, color: "#fff" }} />
+
+                </Box>
+                {/* <Typography sx={{ color: "#000", fontSize: isMobile ? 15 : 17 }}>
+                  Delphin
+                </Typography> */}
+              </IconButton>
               <IconButton onClick={() => navigate("profile")} sx={{ gap: 1 }}>
                 <Box
                   sx={{
@@ -306,10 +332,10 @@ const Topbar = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <PersonOutlinedIcon sx={{ fontSize: isMobile ? 18 : 20, color: "#fff" }} />
+                  <PersonIcon sx={{ fontSize: isMobile ? 18 : 20, color: "#fff" }} />
                 </Box>
                 <Typography sx={{ color: "#000", fontSize: isMobile ? 15 : 17 }}>
-                Charan
+                  Delphin
                 </Typography>
               </IconButton>
             </Box>
@@ -342,7 +368,7 @@ const Topbar = () => {
               }}
             >
               {/* <Typography sx={{ color: "#8d8d8d", fontSize: isMobile ? "20px" : "25px" }}>
-                {getGreeting()} Charan
+                {getGreeting()} Delphin
               </Typography> */}
               <Typography sx={{ color: "#8d8d8d", fontSize: isMobile ? "14px" : "16px" }}>
                 {currentTime.toLocaleString("en-US", {
@@ -360,7 +386,7 @@ const Topbar = () => {
                 alignItems: "center",
               }}
             >
-              <IconButton onClick={() => navigate("profile")} sx={{ gap: 1 }}>
+            <IconButton  sx={{ gap: 1 }}>
                 <Box
                   sx={{
                     width: isMobile ? 25 : 30,
@@ -372,10 +398,29 @@ const Topbar = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <PersonOutlinedIcon sx={{ fontSize: isMobile ? 18 : 20, color: "#fff" }} />
+                 <NotificationsIcon sx={{ fontSize: isMobile ? 18 : 20, color: "#fff" }} />
+
+                </Box>
+                {/* <Typography sx={{ color: "#000", fontSize: isMobile ? 15 : 17 }}>
+                  Delphin
+                </Typography> */}
+              </IconButton>
+              <IconButton onClick={() => navigate("profile")} sx={{ gap: 1 }}>
+                <Box
+                  sx={{
+                    width: isMobile ? 25 : 30,
+                    height: isMobile ? 25 : 30,
+                    borderRadius: "50%",
+                    backgroundColor: colors.blueAccent[500],
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                 > 
+                  <PersonIcon sx={{ fontSize: isMobile ? 18 : 20, color: "#fff" }} />
                 </Box>
                 <Typography sx={{ color: "#000", fontSize: isMobile ? 15 : 17 }}>
-                  Charan
+                  Delphin
                 </Typography>
               </IconButton>
             </Box>
