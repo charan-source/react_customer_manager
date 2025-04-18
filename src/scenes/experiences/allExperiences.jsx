@@ -255,6 +255,10 @@ const AllExperiences = () => {
           },
           "& .MuiDataGrid-row": {
             borderBottom: `0.5px solid ${colors.grey[300]}`, // Add border to the bottom of each row
+            "&:hover": {
+              cursor: "pointer",
+              backgroundColor:"#D9EAFD"
+            },
           },
           "& .MuiTablePagination-root": {
             color: "#ffffff !important", // Ensure pagination text is white
@@ -320,6 +324,10 @@ const AllExperiences = () => {
             },
             "& .MuiDataGrid-row": {
               borderBottom: `0.5px solid ${colors.grey[300]}`, // Add border to the bottom of each row
+              "&:hover": {
+                cursor: "pointer",
+                backgroundColor:"#D9EAFD"
+              },
             },
             "& .MuiTablePagination-root": {
               color: "#ffffff !important", // Ensure pagination text is white
