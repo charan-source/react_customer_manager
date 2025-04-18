@@ -455,7 +455,7 @@ const Topbar = () => {
                 textAlign: isMobile ? "text" : "text",
               }}
             >
-              <Typography sx={{ color: "#ffffff", fontSize: isMobile ? "20px" : "25px" }}>
+              <Typography sx={{ color: "#ffffff", fontSize: isMobile ? "20px" : "25px", fontWeight:"bold" }}>
                 {getPageTitle()}
               </Typography>
               <Box sx={{ color: "#ffffff", alignItems: "center", gap: 1, display: "flex" }}>
